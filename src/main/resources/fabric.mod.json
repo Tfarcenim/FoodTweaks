@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "foodtweaks",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Food Tweaks",
+  "description": "Change, add, and remove foods from existing items",
   "authors": [
     "Tfarecnim"
   ],
@@ -18,11 +18,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "tfar.example.ExampleMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "foodtweaks.mixins.json"
   ],
 
   "depends": {

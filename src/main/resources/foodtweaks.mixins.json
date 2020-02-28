@@ -1,11 +1,12 @@
 {
   "required": true,
-  "package": "net.fabricmc.example.mixin",
+  "package": "tfar.foodtweaks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "RecipeManagerMixin",
+    "ItemMixin"
   ],
   "client": [
-    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
