@@ -40,6 +40,7 @@ public class ConfigParser {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+
 		if (configFile.exists()) return;
 		JsonArray defaultConfig = new JsonArray();
 		for (Item item : Registry.ITEM) {
@@ -81,9 +82,8 @@ public class ConfigParser {
 			FileWriter writer = new FileWriter(configFile);
 			writer.write(g.toJson(defaultConfig));
 			writer.flush();
-		} catch (IOException ugh) {
-			//I expect this from a user, but you?!
-			throw new RuntimeException("The default config is broken, report to mod author asap!", ugh);
+		} catch (IOException ohno) {
+			throw new RuntimeException("this should be impossible, but report if it happens", ohno);
 		}
 	}
 
@@ -92,7 +92,7 @@ public class ConfigParser {
 			FileReader reader = new FileReader(configFile);
 			JsonArray cfg = new JsonParser().parse(reader).getAsJsonArray();
 
-			for (Item item : Registry.ITEM){
+			for (Item item : Registry.ITEM) {
 				((ItemInterface)item).setFood(null);
 			}
 
